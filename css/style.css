@@ -44,7 +44,8 @@ body {
 #hero {
   position: relative;
   height: 92vh;
-  background-image: url("../img/hero.jpg");
+  background-image: linear-gradient(rgb(44, 43, 43, 0.5), rgb(44, 43, 43, 0.5)),
+    url(../img/hero.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -67,4 +68,47 @@ body {
   font-weight: 300;
   margin: 0;
   padding-top: 5px;
+}
+
+#about-me {
+  position: relative;
+  height: 70vh;
+  background-image: url(../img/about-me.png);
+  background-size: 600px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.about-me-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 30%;
+}
+.about-me-text__title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 26px;
+}
+.about-me-text__sub-title {
+  margin: 0;
+  font-weight: 300;
+  padding-top: 5px;
+  font-size: 16px;
+}
+.about-me-text__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.social-links {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 50px;
+}
+.social-links .icon {
+  width: 40px;
 }
