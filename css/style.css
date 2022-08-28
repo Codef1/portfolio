@@ -16,6 +16,20 @@ body {
   padding: 0;
 }
 
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.section-title {
+  margin: 0;
+  font-weight: 900;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  font-size: 28px;
+}
+
+/* Navbar */
 .nav-bar {
   align-items: center;
   background-color: var(--main-color);
@@ -41,6 +55,7 @@ body {
   text-shadow: 1px 1px 1px #d4aa00;
 }
 
+/* Hero Section */
 #hero {
   position: relative;
   height: 92vh;
@@ -70,6 +85,7 @@ body {
   padding-top: 5px;
 }
 
+/* About Me Section */
 #about-me {
   position: relative;
   height: 70vh;
@@ -111,4 +127,37 @@ body {
 }
 .social-links .icon {
   width: 40px;
+}
+
+/* Knowledge Section */
+#services {
+  background-color: var(--main-color);
+  height: 80vh;
+}
+.services-grid {
+  row-gap: 20px;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.service {
+  display: flex;
+  align-items: center;
+}
+.service__icon {
+  flex-shrink: 0;
+  width: 65px;
+  height: 65px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--title-color);
+}
+.service__title {
+  margin: 0;
+  font-size: 20px;
+}
+.service__text {
+  margin: 0;
+  font-weight: 300;
 }
