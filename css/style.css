@@ -18,7 +18,8 @@ body {
 
 .container {
   width: 60%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .section-title {
@@ -88,7 +89,7 @@ body {
 /* About Me Section */
 #about-me {
   position: relative;
-  height: 70vh;
+  height: 500px;
   background-image: url(../img/about-me.png);
   background-size: 600px;
   background-position: left;
@@ -129,10 +130,13 @@ body {
   width: 40px;
 }
 
-/* Knowledge Section */
+/* Services Section */
 #services {
   background-color: var(--main-color);
-  height: 80vh;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .services-grid {
   row-gap: 20px;
@@ -160,4 +164,58 @@ body {
 .service__text {
   margin: 0;
   font-weight: 300;
+}
+
+/* Skills section */
+#skills {
+  background-color: var(--title-color);
+  height: 70vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.chart-title {
+  margin: 10px 0;
+  font-size: 22px;
+}
+
+.chart-sub-title {
+  font-weight: 300;
+  color: #7c7c7c;
+  margin-top: 0;
+}
+
+.cart-item {
+  margin-top: 10px;
+}
+
+.chart-item-text {
+  text-transform: uppercase;
+}
+
+progress {
+  border-radius: 5px;
+  width: 220px;
+  height: 22px;
+  margin-top: 5px;
+}
+progress::-webkit-progress-bar {
+  background-color: var(--text-color);
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+progress::-webkit-progress-value {
+  background-color: var(--main-color);
+  border-radius: 5px;
+}
+progress::-moz-progress-bar {
+  /* style rules */
 }
