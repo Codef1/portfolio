@@ -8,6 +8,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,10 +32,19 @@ body {
 
 /* Navbar */
 .nav-bar {
+  width: 100%;
+  z-index: 999;
+  position: fixed;
   align-items: center;
   background-color: var(--main-color);
   display: flex;
   justify-content: space-around;
+}
+.nav-bar.scrolled {
+  background-color: var(--text-color);
+}
+.nav-bar.scrolled .menu-link {
+  color: #fff;
 }
 .nav-menu {
   font-weight: 700;
@@ -46,6 +56,11 @@ body {
   text-transform: capitalize;
   cursor: pointer;
 }
+.menu-item.active .menu-link {
+  color: #fff;
+  text-shadow: 1px 1px 1px #d4aa00;
+}
+
 .menu-link {
   text-decoration: none;
   color: var(--title-color);
@@ -58,7 +73,7 @@ body {
 /* Hero Section */
 #hero {
   position: relative;
-  height: 92vh;
+  height: 100vh;
   background-image: linear-gradient(rgb(44, 43, 43, 0.5), rgb(44, 43, 43, 0.5)),
     url(../img/hero.jpg);
   background-size: cover;
@@ -88,7 +103,7 @@ body {
 /* About Me Section */
 #about-me {
   position: relative;
-  height: 500px;
+  height: 80vh;
   background-image: url(../img/about-me.png);
   background-size: 600px;
   background-position: left;
@@ -132,7 +147,7 @@ body {
 /* Services Section */
 #services {
   background-color: var(--main-color);
-  height: 500px;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,7 +189,7 @@ body {
 /* Skills section */
 #skills {
   background-color: var(--title-color);
-  height: 500px;
+  height: 80vh;
   color: #fff;
   display: flex;
   align-items: center;
