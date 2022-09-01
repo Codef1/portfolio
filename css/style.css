@@ -4,6 +4,7 @@
   --main-color: #f9cb12;
   --title-color: #2c2b2b;
   --text-color: #474646;
+  --yellow-shadow-color: rgb(249, 203, 18, 0.2);
 }
 
 * {
@@ -18,7 +19,8 @@ body {
 }
 
 .container {
-  width: 60%;
+  width: 70%;
+  margin: 6rem 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -31,6 +33,10 @@ body {
 }
 
 /* Navbar */
+.logo {
+  color: #fff;
+  font-weight: 700;
+}
 .nav-bar {
   width: 100%;
   z-index: 999;
@@ -102,19 +108,22 @@ body {
 
 /* About Me Section */
 #about-me {
-  position: relative;
-  height: 80vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* height: 80vh; */
   background-image: url(../img/about-me.png);
   background-size: 600px;
   background-position: left;
   background-repeat: no-repeat;
 }
 
+#about-me .container {
+  justify-content: space-around;
+}
+
 .about-me-text {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  width: 30%;
+  width: 40%;
 }
 .about-me-text__title {
   margin: 0;
@@ -147,7 +156,7 @@ body {
 /* Services Section */
 #services {
   background-color: var(--main-color);
-  height: 80vh;
+  /* height: 70vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +165,7 @@ body {
   row-gap: 20px;
   column-gap: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 325px);
 }
 .service {
   display: flex;
@@ -173,23 +182,96 @@ body {
 }
 .service__icon {
   fill: #fff;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   padding: 13px;
 }
 .service__title {
   margin: 0;
-  font-size: 20px;
+  padding-bottom: 3px;
+  font-size: 18px;
 }
 .service__text {
   margin: 0;
+  font-size: 14px;
   font-weight: 300;
+}
+
+/* Projects section */
+#projects {
+  /* height: 70vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects .container {
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.projects {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgb(0, 0, 0, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 33%;
+  transition: transform 0.5s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+.card__header {
+  position: relative;
+}
+.card__img {
+  width: 100%;
+}
+.card__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 98%;
+  background-color: var(--text-color);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.card:hover .card__overlay {
+  opacity: 0;
+}
+.card__body {
+  padding: 10px;
+}
+.card__title {
+  margin: 0;
+}
+.card__desc {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+.card__btn {
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--main-color);
 }
 
 /* Skills section */
 #skills {
   background-color: var(--title-color);
-  height: 80vh;
+  /* height: 70vh; */
   color: #fff;
   display: flex;
   align-items: center;
@@ -200,6 +282,10 @@ body {
   height: 300px;
   width: 300px;
   object-fit: cover;
+}
+
+.skills-chart {
+  margin: 15px 0;
 }
 
 .chart-title {
@@ -238,4 +324,36 @@ progress::-webkit-progress-value {
 }
 progress::-moz-progress-bar {
   /* style rules */
+}
+
+/* media queries */
+@media only screen and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-title {
+    margin-bottom: 2rem;
+  }
+
+  #about-me {
+    justify-content: center;
+  }
+  .about-me-text {
+    color: #f7f7f7;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .projects {
+    flex-direction: column;
+  }
+  .card {
+    width: 80%;
+  }
 }
